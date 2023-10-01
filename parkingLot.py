@@ -82,7 +82,13 @@ if __name__ == "__main__":
     for _ in range(3):
         floor = parking_lot.add_floor()
 
-        floor.add_spot("Compact", num_spots=10)  # Add 10 compact spots per floor
+    # Add 10 compact spots per floor
+
+    floor1, floor2, floor3 = parking_lot.floors
+
+    floor1.add_spot("Compact", 10)
+    floor2.add_spot("Motorcycle", 10)
+    floor3.add_spot("Large", 10)
 
     # Park vehicles
     print(parking_lot.park_vehicle("car"))
