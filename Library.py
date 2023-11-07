@@ -97,3 +97,13 @@ if success:
     print(f"Book with ID {book_id} returned by User {user_id}")
 else:
     print("User or book not found or the book was not checked out by the user")
+
+
+
+#comment
+
+# we can also move checkout_book and return_book method to user class as well
+
+#chat gpt
+
+# Yes, you can logically place the checkout_book and return_book methods in the User class. It's a valid design choice, and it aligns with the principles of encapsulation in object-oriented programming. Here's how you could do it:
