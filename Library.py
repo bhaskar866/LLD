@@ -107,3 +107,25 @@ else:
 #chat gpt
 
 # Yes, you can logically place the checkout_book and return_book methods in the User class. It's a valid design choice, and it aligns with the principles of encapsulation in object-oriented programming. Here's how you could do it:
+
+
+
+# Field Name	Data Type	Description
+# book_id	INT (PK)	Unique book identifier
+# title	VARCHAR	Title of the book
+# author	VARCHAR	Author of the book
+# is_available	BOOLEAN	Availability status
+# Users Table:
+
+# This table stores information about library users.
+# Field Name	Data Type	Description
+# user_id	INT (PK)	Unique user identifier
+# name	VARCHAR	Name of the user
+# UserBooks Table:
+
+# This table represents the relationship between users and books, indicating which books are checked out by which users.
+# Field Name	Data Type	Description
+# user_id	INT (FK)	Foreign key referencing Users
+# book_id	INT (FK)	Foreign key referencing Books
+# checkout_date	DATE	Date when the book was checked out
+# return_date	DATE	Date when the book was returned (NULL if not returned)
