@@ -37,10 +37,12 @@ class ElevatorControlSystem:
         nearest_elevator = None
 
         for elevator in self.elevators:
-            if elevator.direction == Direction.UP and direction == Direction.UP and elevator.current_floor <= floor:
+            if elevator.direction == Direction.UP and elevator.current_floor <= floor:
                 distance = floor - elevator.current_floor
-            elif elevator.direction == Direction.DOWN and direction == Direction.DOWN and elevator.current_floor >= floor:
+
+            elif elevator.direction == Direction.DOWN and elevator.current_floor >= floor:
                 distance = elevator.current_floor - floor
+
             else:
                 distance = abs(elevator.current_floor - floor)
 
@@ -50,6 +52,7 @@ class ElevatorControlSystem:
 
         if nearest_elevator:
             nearest_elevator.add_request(floor)
+
         else:
             print(f"No available elevators for request: floor {floor}, direction {direction}")
 
@@ -63,5 +66,5 @@ ecs.request_elevator(5, Direction.UP)
 ecs.request_elevator(3, Direction.DOWN)
 
 # Simulate the passage of time and process elevator requests
-for _ in range(20):
-    ecs.step()
+
+ecs.step()

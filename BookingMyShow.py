@@ -39,7 +39,7 @@ class Theatre:
         self.name = name
         self.capacity = capacity
         self.movies = []
-        
+
     def add_movie(self, movie):
         self.movies.append(movie)
 
@@ -65,6 +65,7 @@ class User:
 
         if show.book_seat(num_seats):
             ticket = Ticket(user, show, num_seats)
+            
             if payment_gateway.process_payment(ticket):
                 print("Tickets have been booked")
                 return ticket

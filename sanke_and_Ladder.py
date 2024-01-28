@@ -12,26 +12,6 @@
 
 import math
 import random
-
-class Board:
-    def __init__(self, size, snakes):
-        self.size = int(math.sqrt(size))
-        self.snakes = snakes
-    def getPosfromNumber(self, pos):
-        pass
-
-
-    def initialize_Board(self):
-        Board = [[[] for j in range(self.size)] for i in range(self.size)]
-
-        for start, end in self.snakes:
-            i_start, j_start = self.getPosfromNumber(start, Board)
-            i_end, j_end = self.getPosfromNumber(end, Board)
-
-            Board[i_start][j_start] = [i_end, j_end]
-
-        return Board
-
 class Dice:
     def __init__(self, Type):
         self.Type = Type
@@ -43,10 +23,6 @@ class Dice:
             return random.choice([1,2,3,4,5,6])
 start = 14
 end = 7
-
-board = Board(100, [(start, end)])
-
-board = board.initialize_Board()
 
 dice = Dice("Normal")
 

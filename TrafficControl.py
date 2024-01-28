@@ -10,8 +10,7 @@ class Light:
         self.state = "red"
 
     def change_state(self, new_state):
-        print(new_state)
-        self.state = "green"
+        self.state = new_state
 
 
 class Intersection:
@@ -26,6 +25,9 @@ class Intersection:
                     light.change_state("green")
                 else:
                     light.change_state("red")
+
+                print("light color: ", light.state)
+
                 time.sleep(1)
 
 light1 = Light()
