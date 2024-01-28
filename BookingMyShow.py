@@ -25,6 +25,7 @@ class Show:
     def __init__(self, start_time, seats):
         self.start_time = start_time
         self.available_seats = seats
+
     def book_seat(self, num_seats):
 
         if self.available_seats >= num_seats:
@@ -38,6 +39,7 @@ class Theatre:
         self.name = name
         self.capacity = capacity
         self.movies = []
+        
     def add_movie(self, movie):
         self.movies.append(movie)
 
@@ -58,6 +60,7 @@ class User:
         self.name = name
         self.email = email
         self.phone = phone
+        
     def book_ticket(self,user, show, num_seats, payment_gateway):
 
         if show.book_seat(num_seats):
